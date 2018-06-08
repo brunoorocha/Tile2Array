@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Tilemap Collision Array Creator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="./css/style.css" />
+    <script src="./js/jquery.js"></script>
+    <script src="./js/functions.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Tilemap Collision Array Creator</h1>
+    </header>
+    
+    <div id="image-upload">
+        <div id="content">
+            <label for="choosed-image" id="choose-image-btn">Choose Image</label>
+            <input type="file" accept="image/*" name="choosed-image" id="choosed-image">
+
+            <div id="align-right">
+                <label for="tile-width">Tile Width: </label>
+                <input type="number" name="" id="tile-width" value="10" min="10" max="100" disabled>
+            </div>
+        </div>
+    </div>
+
+    <section id="grid-editor">        
+        <div id="editor">
+            <div id="hierarchy-selection">
+                <p>Hierarchy Level:</p>
+                <input type="button" id="0" class="hierarchy-btn hierarchy-btn-actived" value="0">
+                <input type="button" id="1" class="hierarchy-btn" value="1">
+                <input type="button" id="2" class="hierarchy-btn" value="2">
+                <input type="button" id="3" class="hierarchy-btn" value="3">
+                <input type="button" id="4" class="hierarchy-btn" value="4">
+                <input type="button" id="5" class="hierarchy-btn" value="5">
+                <input type="button" id="6" class="hierarchy-btn" value="6">
+                <input type="button" id="7" class="hierarchy-btn" value="7">
+                <input type="button" id="8" class="hierarchy-btn" value="8">
+                <input type="button" id="9" class="hierarchy-btn" value="9">
+            </div>
+            <div id="image-containter">
+                <img id="image-preview" src="" alt="">
+            </div>            
+            <table id="grid" cellspacing="0" cellpadding="0"></table>
+
+            <p id="tile-size"></p>
+        </div>
+    </section>
+
+    <section id="array-result">
+        <pre id="result">
+            
+        </pre>
+    </section>
+    
+</body>
+</html>
