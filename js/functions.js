@@ -100,39 +100,46 @@ function selectCellAt(i, j) {
 
         $('#posI'+ i +'J'+ j+' a').css({'background-color': colorsArray[hierarchyLevelSelected - 1], 'opacity': '0.7'})
         
-        var result = gridArray
-        var resultToString = "[\n"
-    
-        for(var i = 0; i < result.length; i++) {
-    
-            resultToString += "\t["
-    
-            for(var j = 0; j < result[0].length; j++) {            
-                
-                if(j == (result[0].length - 1)) {
-    
-                    if(i == (result.length - 1)) {
-                        resultToString += result[i][j] +"]\n"
-                        break
-                    }
-    
-                    resultToString += result[i][j] +"],\n"
-                    break
-                }           
-    
-                resultToString += result[i][j] +","
-            }
-            
-        }
+        setResult(gridArray)
         
-    
-        resultToString += "]"
-        
-        $("#result").html(resultToString)
     } else {        
         $('#posI'+ i +'J'+ j).removeClass('actived')
         $('#posI'+ i +'J'+ j+' a').css({'background-color': "transparent", 'opacity': '1'})
+        
         gridArray[i][j] = 0
+        setResult(gridArray)
     }
     
+}
+
+function setResult(result) {
+
+    var resultToString = "[\n"
+
+    for(var i = 0; i < result.length; i++) {
+
+        resultToString += "\t["
+
+        for(var j = 0; j < result[0].length; j++) {            
+            
+            if(j == (result[0].length - 1)) {
+
+                if(i == (result.length - 1)) {
+                    resultToString += result[i][j] +"]\n"
+                    break
+                }
+
+                resultToString += result[i][j] +"],\n"
+                break
+            }           
+
+            resultToString += result[i][j] +","
+        }
+        
+    }
+    
+
+    resultToString += "]"
+    
+    $("#result").html(resultToString)
 }
