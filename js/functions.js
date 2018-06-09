@@ -129,9 +129,10 @@ function selectCellAt(i, j) {
         resultToString += "]"
         
         $("#result").html(resultToString)
-    } else {
+    } else {        
         $('#posI'+ i +'J'+ j).removeClass('actived')
         $('#posI'+ i +'J'+ j+' a').css({'background-color': "transparent", 'opacity': '1'})
+        gridArray[i][j] = 0
     }
     
 }
